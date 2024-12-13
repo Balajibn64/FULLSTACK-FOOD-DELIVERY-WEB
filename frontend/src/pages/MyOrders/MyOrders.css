@@ -1,15 +1,17 @@
-.my-orders{
+.my-orders {
     margin: 50px 0px;
 }
-.my-orders .container{
+
+.my-orders .container {
     display: flex;
     flex-direction: column;
     gap: 20px;
     margin-top: 30px;
 }
-.my-orders-order{
+
+.my-orders-order {
     display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 2fr 1fr;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 2fr 1fr 1fr;
     align-items: center;
     gap: 30px;
     font-size: 14px;
@@ -17,32 +19,55 @@
     color: #454545;
     border: 1px solid tomato;
 }
-.my-orders-order img{
+
+.my-orders-order img {
     width: 50px;
 }
-.my-orders-order p span{
+
+.my-orders-order p span {
     color: tomato;
 }
-.my-orders-order p b{
+
+.my-orders-order p b {
     font-weight: 500;
     color: #454545;
 }
-.my-orders-order button{
+
+/* Buttons Styling */
+.my-orders-order .button-container {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.my-orders-order button {
+    flex: 1; /* Equal button width inside button-container */
     border: none;
     padding: 12px 0px;
     border-radius: 4px;
     background-color: #ffe1e1;
     cursor: pointer;
     color: #454545;
+    transition: background-color 0.3s ease;
 }
 
-@media (max-width:900px) {
-    .my-orders-order{
-        grid-template-columns: 1fr 2fr 1fr;
+.my-orders-order button:hover {
+    background-color: #ffc1c1;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 900px) {
+    .my-orders-order {
+        grid-template-columns: 1fr 2fr 1fr 1fr;
         row-gap: 5px;
         font-size: 12px;
     }
-    .my-orders-order button{
+
+    .my-orders-order .button-container {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        gap: 5px;
+    }
+
+    .my-orders-order button {
         font-size: 10px;
     }
 }
