@@ -7,7 +7,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
 // placing user order for frontend
 const placeOrder = async (req,res) => {
-    
+
     const frontend_url = "https://food-delivery-frontend-u8jb.onrender.com";
 
     try {
@@ -86,6 +86,18 @@ const userOrders = async (req,res) => {
     }
 }
 
+const deleteOrder = async (req, res) => {
+    try {
+        const { orderId } = req.params; // Use route parameter for the order ID
+        await orderModel.findByIdAndDelete(orderId); // Delete the order by its ID
+        res.json({ success: true, message: "Order deleted successfully" });
+    } catch (error) {
+        console.error("Error deleting order:", error);
+        res.json({ success: false, message: "Failed to delete the order" });
+    }
+};
+
+
 // Listing Orders for admin panel
 const listOrders = async (req,res) => {
     try {
@@ -109,4 +121,4 @@ const updateStatus = async (req,res) => {
     }
 }
 
-export {placeOrder,verifyOrder,userOrders,listOrders,updateStatus}
+export {placeOrder,verifyOrder,userOrders,listOrders,updateStatus,deleteOrder}
