@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 
 const Add = () => {
 
-    const url = "http://localhost:4000";
+    const url = "https://fullstack-food-delivery-web.onrender.com";
     const [image,setImage] = useState(false);
     const [data,setDate] = useState({
         name:"",
