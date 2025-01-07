@@ -88,7 +88,7 @@ This application is designed to streamline the food ordering process and enhance
 ### **Setup Instructions:**  
 1. **Clone the Repository:**  
    ```bash  
-   git clone <repository_url>  
+   git clone <https://github.com/Balajibn64/FULLSTACK-FOOD-DELIVERY-WEB>  
    cd Balajibn64-FULLSTACK-FOOD-DELIVERY-WEB  
    ```  
 
